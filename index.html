@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Velyon - Smart Digital Tools</title>
+  <link
+rel="icon"
+type="image/png"
+href="assets/logo.png">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #0b1220;
+      color: white;
+    }
+
+    /* Navbar */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 60px;
+      background: #0f172a;
+    }
+
+    /* ✅ LOGO UPDATED */
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 24px;
+      font-weight: bold;
+      color: #38bdf8;
+    }
+
+    .logo img {
+      height: 40px;
+      width: 40px;
+      border-radius: 8px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 25px;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #38bdf8;
+    }
+
+    /* Hero */
+    .hero {
+      text-align: center;
+      padding: 100px 20px;
+    }
+
+    .hero h1 {
+      font-size: 55px;
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      color: #cbd5e1;
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      padding: 14px 28px;
+      border: none;
+      border-radius: 10px;
+      margin: 10px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: 0.3s;
+    }
+
+    .primary {
+      background: #38bdf8;
+      color: black;
+    }
+
+    .secondary {
+      background: transparent;
+      border: 1px solid #38bdf8;
+      color: white;
+    }
+
+    .btn:hover {
+      transform: scale(1.05);
+    }
+
+    .section {
+      padding: 60px 40px;
+      text-align: center;
+    }
+
+    .section h2 {
+      font-size: 35px;
+      margin-bottom: 40px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: #111827;
+      padding: 25px;
+      border-radius: 12px;
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      background: #1f2937;
+    }
+
+    .card h3 {
+      color: #38bdf8;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      color: #cbd5e1;
+      font-size: 14px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      background: #0f172a;
+      color: #94a3b8;
+      margin-top: 50px;
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .hero h1 {
+        font-size: 40px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <header>
+
+    <!-- 🔥 LOGO ADDED HERE -->
+    <div class="logo">
+      <img src="assets/logo.png" alt="Velyon Logo">
+      <span>Velyon</span>
+    </div>
+
+   <nav>
+  <a href="index.html">Home</a>
+  <a href="tools.html">Tools</a>
+  <a href="about.html">About</a>
+  <a href="#">Blog</a>
+  <a href="#">Contact</a>
+</nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <h1>Build Smart Digital Tools</h1>
+    <p>Free AI tools, productivity apps & modern utilities for everyone.</p>
+
+    <button class="btn primary">Explore Tools</button>
+    <button class="btn secondary">Learn More</button>
+  </section>
+
+  <!-- Tools -->
+  <section class="section">
+    <h2>Our Tools</h2>
+
+    <div class="grid">
+
+      <div class="card">
+        <h3>AI Writer</h3>
+        <p>Create content instantly using AI.</p>
+      </div>
+
+      <div class="card">
+        <h3>PDF Tools</h3>
+        <p>Merge, split and compress PDFs easily.</p>
+      </div>
+
+      <div class="card">
+        <h3>QR Generator</h3>
+        <p>Generate QR codes in seconds.</p>
+      </div>
+
+      <div class="card">
+        <h3>Resume Builder</h3>
+        <p>Create professional resumes quickly.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    © 2026 Velyon. All rights reserved.
+  </footer>
+
+</body>
+</html>

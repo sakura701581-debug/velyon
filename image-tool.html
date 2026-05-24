@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="viewport"
+  content="width=device-width, initial-scale=1.0">
+
+  <title>Image Compressor - Velyon</title>
+
+  <link rel="stylesheet" href="style.css">
+  <link
+rel="icon"
+type="image/png"
+href="assets/logo.png">
+</head>
+
+<body>
+
+  <!-- HEADER -->
+
+  <header>
+
+    <div class="logo">
+      <img src="assets/logo.png" height="40">
+      <span>Velyon</span>
+    </div>
+
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="tools.html">Tools</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+
+  </header>
+
+  <!-- SECTION -->
+
+  <section class="section">
+
+    <h2>Image Compressor</h2>
+
+    <div class="card contact-card">
+
+      <p>
+        Upload and compress images instantly.
+      </p>
+
+<div class="contact-form">
+
+<label>
+  Compression Quality:
+  <span id="qualityValue">60%</span>
+</label>
+
+<input
+type="range"
+id="quality"
+min="10"
+max="100"
+value="60"
+oninput="
+document.getElementById('qualityValue')
+.innerText = this.value + '%'
+">
+
+  <button
+  class="tool-btn"
+  onclick="compressImage()">
+    Compress Image
+  </button>
+
+</div>
+
+      <div
+      id="output"
+      style="margin-top:30px; text-align:center;">
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+
+  <footer>
+    © 2026 Velyon. All rights reserved.
+  </footer>
+
+  <!-- SCRIPT -->
+
+<script>
+
+function formatSize(bytes){
+
+  return (bytes / 1024).toFixed(2) + " KB";
+}
+
+function compressImage(){
+
+  const input =
+  document.getElementById("imageInput");
+
+  const output =
+  document.getElementById("output");
+
+  const quality =
+  document.getElementById("quality").value / 100;
+
+  const file =
+  input.files[0];
+
+  if(!file){
+
+    output.innerHTML =
+    "<p>Please upload an image.</p>";
+
+    return;
+  }
+
+  const originalSize =
+  formatSize(file.size);
+
+  const reader =
+  new FileReader();
+
+  reader.readAsDataURL(file);
+
+  reader.onload = function(event){
+
+    const img =
+    new Image();
+
+    img.src = event.target.result;
+
+    img.onload = function(){
+
+      const canvas =
+      document.createElement("canvas");
+
+      const ctx =
+      canvas.getContext("2d");
+
+      canvas.width =
+      img.width;
+
+      canvas.height =
+      img.height;
+
+      ctx.drawImage(
+        img,
+        0,
+        0
+      );
+
+      const compressed =
+      canvas.toDataURL(
+        "image/jpeg",
+        quality
+      );
+
+      const compressedSize =
+      formatSize(
+        Math.round(
+          (compressed.length * 3) / 4
+        )
+      );
+
+      output.innerHTML = `
+
+        <h3 style="margin-bottom:20px;">
+          Compressed Image
+        </h3>
+
+        <p style="margin-bottom:10px;">
+          Original Size:
+          ${originalSize}
+        </p>
+
+        <p style="margin-bottom:20px;">
+          Compressed Size:
+          ${compressedSize}
+        </p>
+
+        <img
+        src="${compressed}"
+        style="
+        max-width:100%;
+        border-radius:12px;
+        margin-bottom:20px;
+        ">
+
+        <br>
+
+        <a
+        href="${compressed}"
+        download="compressed-image.jpg">
+
+          <button class="tool-btn">
+            Download Image
+          </button>
+
+        </a>
+      `;
+    };
+  };
+}
+
+</script>
+</body>
+</html>

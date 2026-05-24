@@ -1,0 +1,319 @@
+/* =========================
+   RESET
+========================= */
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial,sans-serif;
+}
+
+/* =========================
+   BODY
+========================= */
+
+body{
+  background:#0b1220;
+  color:white;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+
+  padding:20px 60px;
+
+  background:#0f172a;
+
+  border-bottom:1px solid rgba(255,255,255,0.05);
+}
+
+.logo{
+  display:flex;
+  align-items:center;
+
+  gap:10px;
+
+  font-size:24px;
+  font-weight:bold;
+
+  color:#38bdf8;
+}
+
+.logo img{
+  width:40px;
+  height:40px;
+
+  border-radius:8px;
+}
+
+/* =========================
+   NAV LINKS
+========================= */
+
+nav a{
+  color:white;
+
+  text-decoration:none;
+
+  margin-left:25px;
+
+  transition:0.3s;
+}
+
+nav a:hover{
+  color:#38bdf8;
+}
+
+/* =========================
+   SECTION
+========================= */
+
+.section{
+  padding:70px 50px;
+}
+
+.section h2{
+  text-align:center;
+
+  font-size:42px;
+
+  margin-bottom:50px;
+}
+
+/* =========================
+   GRID
+========================= */
+
+.grid{
+  display:grid;
+
+  grid-template-columns:
+  repeat(auto-fit,minmax(280px,1fr));
+
+  gap:25px;
+
+  max-width:1200px;
+
+  margin:auto;
+}
+
+/* =========================
+   CARD
+========================= */
+
+.card{
+  background:#111827;
+
+  padding:30px;
+
+  border-radius:18px;
+
+  border:1px solid rgba(255,255,255,0.05);
+
+  transition:0.3s;
+
+  min-height:240px;
+
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+}
+
+.card:hover{
+  transform:translateY(-8px);
+
+  background:#172033;
+
+  border-color:rgba(56,189,248,0.4);
+
+  box-shadow:
+  0 10px 30px rgba(0,0,0,0.4),
+  0 0 20px rgba(56,189,248,0.15);
+}
+
+/* =========================
+   ICON
+========================= */
+
+.icon{
+  font-size:42px;
+
+  margin-bottom:20px;
+}
+
+/* =========================
+   TEXT
+========================= */
+
+.card h3{
+  color:#38bdf8;
+
+  font-size:24px;
+
+  margin-bottom:12px;
+}
+
+.card p{
+  color:#cbd5e1;
+
+  font-size:15px;
+
+  line-height:1.6;
+}
+
+/* =========================
+   BUTTON
+========================= */
+
+.tool-btn{
+  margin-top:25px;
+
+  padding:12px 18px;
+
+  border:none;
+
+  border-radius:10px;
+
+  background:#38bdf8;
+
+  color:black;
+
+  font-weight:bold;
+
+  cursor:pointer;
+
+  transition:0.3s;
+}
+
+.tool-btn:hover{
+  transform:scale(1.05);
+
+  box-shadow:
+  0 0 20px rgba(56,189,248,0.5);
+}
+
+/* =========================
+   CONTACT PAGE
+========================= */
+
+.contact-card{
+  max-width:700px;
+
+  margin:auto;
+
+  padding:40px;
+}
+
+.contact-form{
+  display:flex;
+
+  flex-direction:column;
+
+  gap:20px;
+
+  margin-top:30px;
+}
+
+.contact-form input,
+.contact-form textarea{
+
+  width:100%;
+
+  padding:16px;
+
+  border:none;
+
+  border-radius:12px;
+
+  background:#0f172a;
+
+  color:white;
+
+  border:1px solid rgba(255,255,255,0.08);
+
+  font-size:15px;
+
+  outline:none;
+
+  transition:0.3s;
+}
+
+.contact-form textarea{
+  resize:none;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus{
+
+  border-color:#38bdf8;
+
+  box-shadow:
+  0 0 12px rgba(56,189,248,0.2);
+}
+
+.contact-form .tool-btn{
+  width:fit-content;
+
+  padding:12px 24px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+  text-align:center;
+
+  padding:25px;
+
+  margin-top:60px;
+
+  background:#0f172a;
+
+  color:#94a3b8;
+
+  border-top:1px solid rgba(255,255,255,0.05);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:768px){
+
+  header{
+    flex-direction:column;
+
+    gap:15px;
+
+    padding:20px;
+  }
+
+  nav{
+    display:flex;
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+  }
+
+  nav a{
+    margin:10px;
+  }
+
+  .section{
+    padding:50px 20px;
+  }
+
+  .section h2{
+    font-size:34px;
+  }
+
+}

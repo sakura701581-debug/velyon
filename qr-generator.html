@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+  content="width=device-width, initial-scale=1.0">
+
+  <title>QR Generator - Velyon</title>
+
+  <link rel="stylesheet" href="style.css">
+  <link
+rel="icon"
+type="image/png"
+href="assets/logo.png">
+</head>
+
+<body>
+
+  <!-- HEADER -->
+
+  <header>
+
+    <div class="logo">
+      <img src="assets/logo.png" height="40">
+      <span>Velyon</span>
+    </div>
+
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="tools.html">Tools</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+
+  </header>
+
+  <!-- QR SECTION -->
+
+  <section class="section">
+
+    <h2>QR Code Generator</h2>
+
+    <div class="card contact-card">
+
+      <p>
+        Generate QR codes instantly for links,
+        text and more.
+      </p>
+
+      <div class="contact-form">
+
+        <input
+        type="text"
+        id="qrText"
+        placeholder="Enter text or URL">
+
+        <button
+        class="tool-btn"
+        onclick="generateQR()">
+          Generate QR
+        </button>
+
+      </div>
+
+      <div
+      id="qrBox"
+      style="margin-top:30px; text-align:center;">
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+
+  <footer>
+    © 2026 Velyon. All rights reserved.
+  </footer>
+
+  <!-- SCRIPT -->
+
+  <script>
+
+    function generateQR(){
+
+      let text =
+      document.getElementById("qrText").value;
+
+      let qrBox =
+      document.getElementById("qrBox");
+
+      if(text.trim() === ""){
+
+        qrBox.innerHTML =
+        "<p>Please enter text or URL.</p>";
+
+        return;
+      }
+
+      qrBox.innerHTML = `
+        <img
+        src="https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=${encodeURIComponent(text)}"
+        alt="QR Code">
+      `;
+    }
+
+  </script>
+
+</body>
+</html>
